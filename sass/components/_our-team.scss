@@ -27,14 +27,13 @@
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   background-color: #fff;
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .team-item__img {
   display: block;
-}
-
-.team-item:not(:last-child) {
-  margin-right: 30px;
 }
 
 .team-item__member {
@@ -66,6 +65,10 @@
   display: flex;
   justify-content: center;
 }
+.our-team-social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
 .our-team-social-item__link {
   display: flex;
   justify-content: center;
@@ -78,20 +81,17 @@
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus,
+  &:hover {
+    background-color: var(--link-color);
+  }
 }
 
-.our-team-social-item__link:focus {
-  background-color: var(--link-color);
-}
-.our-team-social-item__link:focus .our-team-social-item__icons {
-  fill: var(--primary-white-color);
-}
-.our-team-social-item:not(:last-child) {
-  margin-right: 10px;
-}
-.our-team-social-item__link:hover {
-  background-color: var(--link-color);
-}
-.our-team-social-item__link:hover .our-team-social-item__icons {
-  fill: var(--primary-white-color);
+.our-team-social-item__icons {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .our-team-social-item__link:focus &,
+  .our-team-social-item__link:hover & {
+    fill: var(--primary-white-color);
+  }
 }
